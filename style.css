@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+kbd{
+    border: 1px solid red;
+    width: 4em;
+    height: 4em;
+    display: inline-block;
+    text-transform: uppercase;        /*小写转大写  */
+    position: relative;
+}
+
+kbd>button{
+    /*绝对定位把button放在右下*/
+    position: absolute;   
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+
+kbd:hover>button{
+/*放在键盘上的时候，button才显示，button是内联元素，所以是inline-block*/
+    display: inline-block;
+}
+
+main .wrapper >div:nth-child(2){
+    margin-left: -1em;           /*第二个div向左1em*/
+}
+
+main .wrapper >div:nth-child(3){
+    margin-left: -1em;
+}
+/* 添加背景图片 */
+body{
+    background: gray url(./wall.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+/* 在键盘外加一层透明的背景框 */
+.wrapper{
+    border-radius: 10px;
+    background: rgba(255,255,255,0.2);
+}
+
+main{
+    /* 高度不够显示不出居中的效果，所以设置一个高度 */
+    /* 100vh的意思就是跟屏幕一样高 */
+    height: 100vh; 
+    text-align: center;
+    /* 为了让main中的元素居中，在父类加三句话 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.key{
+    /* 大小设置 */
+    width: 50px;
+    height: 40px;
+    /* 背景颜色，黑色渐变色 */
+    background:linear-gradient(to bottom, #292929 0%,#111111 100%);
+    /* 边框设置(圆角)，一共三层边框，可以重叠使用 */
+    border: 1px solid #373737;
+    /* 这里的圆角大小是测出来的，放大之后数像素点,感觉不像可以再调 */
+    border-radius: 6px;
+    /* 字体颜色 */
+    color: #c5c5c5;
+    /* 基本效果暂时出来了 */
+
+    /* 附加效果，边框下再加边框 */
+     box-shadow: 0 0 0px 1px #1a1b1c,0 0 0 2px #1f2020,0 3px 0 2px #080808;
+    /* 设置字体在左上角显示，先把它绝对定位  */
+    position: relative;
+
+     /*字体*/
+     font-size: 20px;
+     font-family: Helvetica;
+}
+
+.row{
+    margin: 20px;
+}
+
+.row .key{
+    margin: 0 9px;
+}
+
+.key img{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 2px;
+    bottom: 1px;
+}
+
+.kbd .text{
+    position: absolute;;
+    left: 4px;
+    top: 2px;
+}
+
+
